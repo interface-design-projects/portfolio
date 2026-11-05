@@ -1,11 +1,11 @@
-# Portfolio di Sara Marotta
+# Portfolio di S. Marotta
 
 Portfolio personale di UX/UI e Web Design, con progetti
 di ricerca, accessibilità, design inclusivo e comunicazione visiva.
 
 ## Sito online
 
-https://smsaramarotta-crypto.github.io/portfolio-sara/
+https://github.com/interface-design-projects
 
 ## Tecnologie
 
