@@ -5,7 +5,7 @@ di ricerca, accessibilità, design inclusivo e comunicazione visiva.
 
 ## Sito online
 
-https://github.com/interface-design-projects
+https://interface-design-projects.github.io/portfolio/index-it.html
 
 ## Tecnologie
 
