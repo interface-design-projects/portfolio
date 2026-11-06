@@ -15696,3 +15696,37 @@ body .cv-page .cv-hero .cv-hero__scope .scope-item small {
   font-size: 14px !important;
   line-height: 1.5 !important;
 }
+
+/* NUMERO ACCANTO AL TITOLO NELLA LISTA CV A DESTRA */
+
+body .cv-page .cv-hero .cv-hero__scope .scope-item {
+  display: grid !important;
+  grid-template-columns: auto 1fr !important;
+  column-gap: 12px !important;
+  row-gap: 6px !important;
+  align-items: start !important;
+}
+
+body .cv-page .cv-hero .cv-hero__scope .scope-item > span:first-child {
+  grid-column: 1 !important;
+  grid-row: 1 !important;
+  margin: 0 !important;
+  font-size: 15px !important;
+  line-height: 1.2 !important;
+}
+
+body .cv-page .cv-hero .cv-hero__scope .scope-item > strong {
+  grid-column: 2 !important;
+  grid-row: 1 !important;
+  margin: 0 !important;
+  font-size: 18px !important;
+  line-height: 1.2 !important;
+}
+
+body .cv-page .cv-hero .cv-hero__scope .scope-item > small {
+  grid-column: 2 !important;
+  grid-row: 2 !important;
+  margin: 0 !important;
+  font-size: 14px !important;
+  line-height: 1.5 !important;
+}
