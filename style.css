@@ -15571,59 +15571,81 @@ body.home-page .home-progetti .progetto-card .progetto-card-back-visual {
   }
 }
 
-/* CV HERO — contenuto a sinistra e indice verticale a destra */
-@media (min-width: 901px) {
-  .cv-page .cv-hero__grid {
-    display: grid;
-    grid-template-columns: minmax(0, 1.15fr) minmax(260px, 0.85fr);
-    gap: clamp(40px, 5vw, 88px);
-    align-items: start;
-  }
 
-  .cv-page .cv-hero__content,
-  .cv-page .cv-hero__scope {
-    min-width: 0;
-    width: 100%;
-  }
 
-  .cv-page .cv-hero__scope {
-    margin: 0;
-  }
-
-  .cv-page .cv-hero__scope .case-scope-grid {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr);
-    gap: 0;
-  }
-
-  .cv-page .cv-hero__scope .scope-item {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 6px;
-    width: 100%;
-    min-width: 0;
-    padding: 18px 0;
-    border-left: 0;
-    border-right: 0;
-    border-bottom: 1px solid rgba(30, 77, 61, 0.18);
-  }
-
-  .cv-page .cv-hero__scope .scope-item:first-child {
-    border-top: 1px solid rgba(30, 77, 61, 0.18);
-  }
+/* ==========================================================
+   CV HERO — COLONNA TESTO + INDICE VERTICALE
+   Correzione per il nuovo markup di cv.html e cv-it.html.
+   Prevale sui vecchi stili pensati per il ritratto.
+   ========================================================== */
+.cv-page .cv-hero .cv-hero__grid {
+  display: grid;
+  grid-template-areas: none;
+  grid-template-columns: minmax(0, 1.15fr) minmax(280px, 0.85fr);
+  column-gap: clamp(32px, 5vw, 80px);
+  row-gap: 0;
+  align-items: start;
 }
-
+.cv-page .cv-hero .cv-hero__content {
+  display: block;
+  grid-area: auto;
+  grid-column: 1;
+  grid-row: 1;
+  width: 100%;
+  min-width: 0;
+  max-width: none;
+}
+.cv-page .cv-hero .cv-hero__heading,
+.cv-page .cv-hero .cv-hero__body {
+  grid-area: auto;
+  min-width: 0;
+}
+.cv-page .cv-hero .cv-hero__scope {
+  display: block;
+  grid-area: auto;
+  grid-column: 2;
+  grid-row: 1;
+  min-width: 0;
+  width: 100%;
+  margin: 0;
+}
+.cv-page .cv-hero .cv-hero__scope .case-scope-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 0;
+  width: 100%;
+  border-top: 1px solid rgba(24,24,23,.14);
+  border-bottom: 0;
+}
+.cv-page .cv-hero .cv-hero__scope .scope-item,
+body .cv-page .cv-hero .cv-hero__scope .scope-item:nth-child(n) {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 5px;
+  min-height: 0;
+  width: 100%;
+  padding: 15px 12px;
+  border: 0;
+  border-bottom: 1px solid rgba(24,24,23,.14) !important;
+}
+.cv-page .cv-hero .cv-hero__scope .scope-item:first-child {
+  border-top: 0;
+}
 @media (max-width: 900px) {
-  .cv-page .cv-hero__grid {
-    display: grid;
+  .cv-page .cv-hero .cv-hero__grid {
+    grid-template-areas: none;
     grid-template-columns: minmax(0, 1fr);
-    gap: 36px;
+    row-gap: 36px;
   }
-
-  .cv-page .cv-hero__scope .case-scope-grid {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr);
-    gap: 0;
+  .cv-page .cv-hero .cv-hero__content {
+    grid-column: 1;
+    grid-row: 1;
+  }
+  .cv-page .cv-hero .cv-hero__scope {
+    grid-column: 1;
+    grid-row: 2;
+    margin-top: 0;
   }
 }
