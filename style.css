@@ -15571,67 +15571,40 @@ body.home-page .home-progetti .progetto-card .progetto-card-back-visual {
   }
 }
 
-
 /* ==========================================================
-   CV HERO — LAYOUT A DUE COLONNE
+   CV HERO — LAYOUT DESKTOP
    ========================================================== */
 
-/* Contenitore principale */
-body .cv-page .cv-hero .cv-hero__grid {
-  display: grid !important;
-  grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr) !important;
-  grid-template-areas: "profile sections" !important;
-  gap: clamp(36px, 5vw, 72px) !important;
-  align-items: start !important;
-}
+@media (min-width: 901px) {
+  body .cv-page .cv-hero .cv-hero__grid {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr) !important;
+    grid-template-areas: "profile sections" !important;
+    gap: clamp(36px, 5vw, 72px) !important;
+    align-items: center !important; /* centra verticalmente la colonna destra */
+  }
 
-/* ==========================================================
-   COLONNA SINISTRA — PRESENTAZIONE
-   ========================================================== */
+  body .cv-page .cv-hero .cv-hero__content {
+    grid-area: profile !important;
+    align-self: start !important;
+    width: 100% !important;
+    min-width: 0 !important;
+  }
 
-body .cv-page .cv-hero .cv-hero__content {
-  display: flex !important;
-  flex-direction: column !important;
-  grid-area: profile !important;
-  align-self: start !important;
-  justify-content: flex-start !important;
-  min-width: 0 !important;
-  width: 100% !important;
-  max-width: none !important;
-  margin: 0 !important;
-  padding: 0 !important;
-}
-
-body .cv-page .cv-hero .cv-hero__heading,
-body .cv-page .cv-hero .cv-hero__body {
-  display: block !important;
-  grid-area: auto !important;
-  align-self: start !important;
-  width: 100% !important;
-  min-width: 0 !important;
-  margin: 0 !important;
-  padding: 0 !important;
+  body .cv-page .cv-hero .cv-hero__scope {
+    grid-area: sections !important;
+    align-self: center !important;
+    width: 100% !important;
+    min-width: 0 !important;
+  }
 }
 
 /* ==========================================================
-   COLONNA DESTRA — NAVIGAZIONE
+   COLONNA DESTRA — LISTA SEZIONI
    ========================================================== */
 
-body .cv-page .cv-hero .cv-hero__scope {
-  display: block !important;
-  grid-area: sections !important;
-  align-self: stretch !important;
-  width: 100% !important;
-  min-width: 0 !important;
-  margin: 0 !important;
-  padding: 0 !important;
-}
-
-/* Le cinque voci sono disposte verticalmente */
 body .cv-page .cv-hero .cv-hero__scope .case-scope-grid {
   display: grid !important;
-  height: auto !important;
-  grid-template-rows: none !important;
   grid-template-columns: minmax(0, 1fr) !important;
   gap: 0 !important;
   width: 100% !important;
@@ -15641,26 +15614,21 @@ body .cv-page .cv-hero .cv-hero__scope .case-scope-grid {
   border-bottom: 0 !important;
 }
 
-/* ==========================================================
-   SINGOLE VOCI — NUMERO + TITOLO + DESCRIZIONE
-   ========================================================== */
-
 body .cv-page .cv-hero .cv-hero__scope .scope-item,
 body .cv-page .cv-hero .cv-hero__scope .scope-item:nth-child(n) {
   display: grid !important;
-  grid-template-columns: 26px minmax(0, 1fr) !important;
-  grid-template-rows: auto auto !important;
-  column-gap: 12px !important;
-  row-gap: 3px !important;
-  align-items: start !important;
+  grid-template-columns: 44px minmax(0, 1fr) !important;
+  grid-template-areas:
+    "number title"
+    ". desc" !important;
+  column-gap: 14px !important;
+  row-gap: 4px !important;
+  align-items: center !important;
 
   width: 100% !important;
-  min-width: 0 !important;
-  min-height: 0 !important;
-  box-sizing: border-box !important;
-
   margin: 0 !important;
-  padding: 10px 0 !important;
+  padding: 14px 0 !important;
+  box-sizing: border-box !important;
 
   border: 0 !important;
   border-bottom: 1px solid rgba(24, 24, 23, 0.17) !important;
@@ -15669,66 +15637,54 @@ body .cv-page .cv-hero .cv-hero__scope .scope-item:nth-child(n) {
   text-decoration: none !important;
 }
 
-/* Numero — prima colonna */
+/* Numero */
 body .cv-page .cv-hero .cv-hero__scope .scope-item > span:first-child {
+  grid-area: number !important;
   display: block !important;
-  grid-column: 1 !important;
-  grid-row: 1 !important;
-
   margin: 0 !important;
   padding: 0 !important;
 
-  color: #265649;
-  font-size: 13px !important;
-  line-height: 1.3 !important;
-  font-weight: 500;
+  color: #265649 !important;
+  font-size: 16px !important;   /* più grande */
+  line-height: 1.1 !important;
+  font-weight: 600 !important;
+  align-self: center !important; /* stessa linea del titolo */
 }
 
-/* Titolo — accanto al numero */
+/* Titolo */
 body .cv-page .cv-hero .cv-hero__scope .scope-item > strong {
+  grid-area: title !important;
   display: block !important;
-  grid-column: 2 !important;
-  grid-row: 1 !important;
-
   margin: 0 !important;
   padding: 0 !important;
 
-  color: #265649;
+  color: #265649 !important;
   font-size: 18px !important;
-  line-height: 1.3 !important;
+  line-height: 1.2 !important;
   font-weight: 700 !important;
+  align-self: center !important;
 }
 
-/* Descrizione — sotto il titolo */
+/* Descrizione */
 body .cv-page .cv-hero .cv-hero__scope .scope-item > small {
+  grid-area: desc !important;
   display: block !important;
-  grid-column: 2 !important;
-  grid-row: 2 !important;
-
   margin: 0 !important;
   padding: 0 !important;
 
-  color: #5f5d58;
+  color: #5f5d58 !important;
   font-size: 14px !important;
-  line-height: 1.4 !important;
+  line-height: 1.45 !important;
   font-weight: 400 !important;
 }
 
-/* ==========================================================
-   HOVER E ACCESSIBILITÀ
-   ========================================================== */
-
+/* Hover */
 body .cv-page .cv-hero .cv-hero__scope .scope-item {
   transition: background-color 0.2s ease;
 }
 
 body .cv-page .cv-hero .cv-hero__scope .scope-item:hover {
-  padding-left: 0 !important;
   background-color: rgba(38, 86, 73, 0.035);
-}
-
-body .cv-page .cv-hero .cv-hero__scope .scope-item:hover strong {
-  transform: none !important;
 }
 
 body .cv-page .cv-hero .cv-hero__scope .scope-item:focus-visible {
@@ -15741,7 +15697,6 @@ body .cv-page .cv-hero .cv-hero__scope .scope-item:focus-visible {
    ========================================================== */
 
 @media (max-width: 900px) {
-
   body .cv-page .cv-hero .cv-hero__grid {
     display: grid !important;
     grid-template-columns: minmax(0, 1fr) !important;
@@ -15749,40 +15704,19 @@ body .cv-page .cv-hero .cv-hero__scope .scope-item:focus-visible {
       "profile"
       "sections" !important;
     gap: 40px !important;
-    align-items: stretch !important;
+    align-items: start !important;
   }
 
   body .cv-page .cv-hero .cv-hero__content {
     grid-area: profile !important;
-    grid-column: 1 !important;
-    grid-row: auto !important;
   }
 
   body .cv-page .cv-hero .cv-hero__scope {
     grid-area: sections !important;
-    grid-column: 1 !important;
-    grid-row: auto !important;
-  }
-
-  body .cv-page .cv-hero .cv-hero__scope .case-scope-grid {
-    height: 100% !important;
-grid-template-rows: repeat(5, minmax(0, 1fr)) !important;
-  }
-}
-
-
-/* CV — centratura verticale della colonna destra */
-
-@media (min-width: 901px) {
-  body .cv-page .cv-hero .cv-hero__scope {
-    align-self: center !important;
-  }
-}
-
-/* Tablet e mobile */
-@media (max-width: 900px) {
-  body .cv-page .cv-hero .cv-hero__scope {
     align-self: start !important;
   }
 }
+
+
+
 
