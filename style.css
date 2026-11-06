@@ -15771,3 +15771,18 @@ grid-template-rows: repeat(5, minmax(0, 1fr)) !important;
 }
 
 
+/* CV — centratura verticale della colonna destra */
+
+@media (min-width: 901px) {
+  body .cv-page .cv-hero .cv-hero__scope {
+    align-self: center !important;
+  }
+}
+
+/* Tablet e mobile */
+@media (max-width: 900px) {
+  body .cv-page .cv-hero .cv-hero__scope {
+    align-self: start !important;
+  }
+}
+
