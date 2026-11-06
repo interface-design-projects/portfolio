@@ -15620,7 +15620,7 @@ body .cv-page .cv-hero .cv-hero__body {
 body .cv-page .cv-hero .cv-hero__scope {
   display: block !important;
   grid-area: sections !important;
-  align-self: start !important;
+  align-self: stretch !important;
   width: 100% !important;
   min-width: 0 !important;
   margin: 0 !important;
@@ -15630,8 +15630,9 @@ body .cv-page .cv-hero .cv-hero__scope {
 /* Le cinque voci sono disposte verticalmente */
 body .cv-page .cv-hero .cv-hero__scope .case-scope-grid {
   display: grid !important;
-  grid-template-columns: minmax(0, 1fr) !important;
+  height: auto !important;
   grid-template-rows: none !important;
+  grid-template-columns: minmax(0, 1fr) !important;
   gap: 0 !important;
   width: 100% !important;
   margin: 0 !important;
@@ -15748,7 +15749,7 @@ body .cv-page .cv-hero .cv-hero__scope .scope-item:focus-visible {
       "profile"
       "sections" !important;
     gap: 40px !important;
-    align-items: start !important;
+    align-items: stretch !important;
   }
 
   body .cv-page .cv-hero .cv-hero__content {
@@ -15764,7 +15765,8 @@ body .cv-page .cv-hero .cv-hero__scope .scope-item:focus-visible {
   }
 
   body .cv-page .cv-hero .cv-hero__scope .case-scope-grid {
-    grid-template-columns: minmax(0, 1fr) !important;
+    height: 100% !important;
+grid-template-rows: repeat(5, minmax(0, 1fr)) !important;
   }
 }
 
