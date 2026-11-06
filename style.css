@@ -15730,3 +15730,48 @@ body .cv-page .cv-hero .cv-hero__scope .scope-item > small {
   font-size: 14px !important;
   line-height: 1.5 !important;
 }
+
+
+
+/* CV — navigazione compatta sulla destra */
+
+.cv-page .cv-hero .cv-hero__scope .case-scope-grid {
+  display: grid !important;
+  grid-template-columns: minmax(0, 1fr) !important;
+  gap: 0 !important;
+}
+
+.cv-page .cv-hero .cv-hero__scope .scope-item {
+  display: grid !important;
+  grid-template-columns: 26px minmax(0, 1fr) !important;
+  grid-template-rows: auto auto !important;
+  column-gap: 12px !important;
+  row-gap: 2px !important;
+  align-items: baseline !important;
+  padding: 10px 0 !important;
+  min-height: 0 !important;
+  border-right: none !important;
+}
+
+.cv-page .cv-hero .cv-hero__scope .scope-item > span:first-child {
+  grid-column: 1 !important;
+  grid-row: 1 !important;
+  margin: 0 !important;
+  line-height: 1.3 !important;
+}
+
+.cv-page .cv-hero .cv-hero__scope .scope-item > strong {
+  grid-column: 2 !important;
+  grid-row: 1 !important;
+  margin: 0 !important;
+  line-height: 1.3 !important;
+}
+
+.cv-page .cv-hero .cv-hero__scope .scope-item > small {
+  grid-column: 2 !important;
+  grid-row: 2 !important;
+  margin: 0 !important;
+  line-height: 1.4 !important;
+}
+
+
