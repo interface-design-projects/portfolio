@@ -15739,6 +15739,6 @@ body .cv-page .cv-hero .cv-hero__scope .scope-item:focus-visible {
 /* HOME — riduce lo spazio intorno a S. M. */
 
 .home-page .home-hero-title .home-hero-name-logo {
-  margin-top: -35px !important;
-  margin-bottom: -55px !important;
+  margin-top: -65px !important;
+  margin-bottom: -85px !important;
 }
