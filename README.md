@@ -1,4 +1,4 @@
-# Portfolio di S. Marotta
+# Portfolio di S. M.
 
 Portfolio personale di UX/UI e Web Design, con progetti
 di ricerca, accessibilità, design inclusivo e comunicazione visiva.
