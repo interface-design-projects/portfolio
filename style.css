@@ -15572,17 +15572,22 @@ body.home-page .home-progetti .progetto-card .progetto-card-back-visual {
 }
 
 
+/* ==========================================================
+   CV HERO — LAYOUT A DUE COLONNE
+   ========================================================== */
 
-/* CV — layout dedicato per cv.html e cv-it.html.
-   Caricare DOPO style.css. Non modifica le altre pagine. */
-
+/* Contenitore principale */
 body .cv-page .cv-hero .cv-hero__grid {
   display: grid !important;
-  grid-template-columns: minmax(0, 1.15fr) minmax(0, .85fr) !important;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr) !important;
   grid-template-areas: "profile sections" !important;
   gap: clamp(36px, 5vw, 72px) !important;
   align-items: start !important;
 }
+
+/* ==========================================================
+   COLONNA SINISTRA — PRESENTAZIONE
+   ========================================================== */
 
 body .cv-page .cv-hero .cv-hero__content {
   display: flex !important;
@@ -15602,176 +15607,165 @@ body .cv-page .cv-hero .cv-hero__body {
   display: block !important;
   grid-area: auto !important;
   align-self: start !important;
-  min-width: 0;
-  width: 100%;
+  width: 100% !important;
+  min-width: 0 !important;
   margin: 0 !important;
   padding: 0 !important;
 }
+
+/* ==========================================================
+   COLONNA DESTRA — NAVIGAZIONE
+   ========================================================== */
 
 body .cv-page .cv-hero .cv-hero__scope {
   display: block !important;
   grid-area: sections !important;
   align-self: start !important;
   width: 100% !important;
-  min-width: 0;
+  min-width: 0 !important;
   margin: 0 !important;
   padding: 0 !important;
 }
 
-body .cv-page .cv-hero .cv-hero__scope .case-scope-grid {
-  display: grid !important;
-  grid-template-columns: minmax(0, 1fr) !important;
-  gap: 0 !important;
-  width: 100% !important;
-  border-top: 1px solid rgba(24, 24, 23, .17) !important;
-  border-bottom: 0 !important;
-}
-
-body .cv-page .cv-hero .cv-hero__scope .scope-item,
-body .cv-page .cv-hero .cv-hero__scope .scope-item:nth-child(n) {
-  display: flex !important;
-  flex-direction: column !important;
-  gap: 4px !important;
-  min-height: 0 !important;
-  padding: 16px 0 !important;
-  border: 0 !important;
-  border-bottom: 1px solid rgba(24, 24, 23, .17) !important;
-  text-align: left !important;
-  width: 100% !important;
-}
-
-body .cv-page .cv-hero .cv-hero__scope .scope-item:hover {
-  padding-left: 8px !important;
-}
-
-@media (max-width: 900px) {
-  body .cv-page .cv-hero .cv-hero__grid {
-    grid-template-columns: minmax(0, 1fr) !important;
-    grid-template-areas: "profile" "sections" !important;
-    gap: 40px !important;
-  }
-  body .cv-page .cv-hero .cv-hero__content,
-  body .cv-page .cv-hero .cv-hero__scope {
-    grid-column: 1 !important;
-    grid-row: auto !important;
-  }
-}
-
-/* CV — NAVIGAZIONE VERTICALE A DESTRA */
-
+/* Le cinque voci sono disposte verticalmente */
 body .cv-page .cv-hero .cv-hero__scope .case-scope-grid {
   display: grid !important;
   grid-template-columns: minmax(0, 1fr) !important;
   grid-template-rows: none !important;
   gap: 0 !important;
-
   width: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
   border-top: 1px solid rgba(24, 24, 23, 0.17) !important;
   border-bottom: 0 !important;
 }
 
+/* ==========================================================
+   SINGOLE VOCI — NUMERO + TITOLO + DESCRIZIONE
+   ========================================================== */
+
 body .cv-page .cv-hero .cv-hero__scope .scope-item,
 body .cv-page .cv-hero .cv-hero__scope .scope-item:nth-child(n) {
-  display: flex !important;
-  flex-direction: column !important;
-  align-items: flex-start !important;
-
-  width: 100% !important;
-  min-height: 0 !important;
-  padding: 16px 0 !important;
-  gap: 6px !important;
-
-  border-right: 0 !important;
-  border-top: 0 !important;
-  border-bottom: 1px solid rgba(24, 24, 23, 0.17) !important;
-  text-align: left !important;
-}
-
-body .cv-page .cv-hero .cv-hero__scope .scope-item strong {
-  margin: 0 !important;
-  font-size: 18px !important;
-}
-
-body .cv-page .cv-hero .cv-hero__scope .scope-item small {
-  font-size: 14px !important;
-  line-height: 1.5 !important;
-}
-
-/* NUMERO ACCANTO AL TITOLO NELLA LISTA CV A DESTRA */
-
-body .cv-page .cv-hero .cv-hero__scope .scope-item {
-  display: grid !important;
-  grid-template-columns: auto 1fr !important;
-  column-gap: 12px !important;
-  row-gap: 6px !important;
-  align-items: start !important;
-}
-
-body .cv-page .cv-hero .cv-hero__scope .scope-item > span:first-child {
-  grid-column: 1 !important;
-  grid-row: 1 !important;
-  margin: 0 !important;
-  font-size: 15px !important;
-  line-height: 1.2 !important;
-}
-
-body .cv-page .cv-hero .cv-hero__scope .scope-item > strong {
-  grid-column: 2 !important;
-  grid-row: 1 !important;
-  margin: 0 !important;
-  font-size: 18px !important;
-  line-height: 1.2 !important;
-}
-
-body .cv-page .cv-hero .cv-hero__scope .scope-item > small {
-  grid-column: 2 !important;
-  grid-row: 2 !important;
-  margin: 0 !important;
-  font-size: 14px !important;
-  line-height: 1.5 !important;
-}
-
-
-
-/* CV — navigazione compatta sulla destra */
-
-.cv-page .cv-hero .cv-hero__scope .case-scope-grid {
-  display: grid !important;
-  grid-template-columns: minmax(0, 1fr) !important;
-  gap: 0 !important;
-}
-
-.cv-page .cv-hero .cv-hero__scope .scope-item {
   display: grid !important;
   grid-template-columns: 26px minmax(0, 1fr) !important;
   grid-template-rows: auto auto !important;
   column-gap: 12px !important;
-  row-gap: 2px !important;
-  align-items: baseline !important;
-  padding: 10px 0 !important;
+  row-gap: 3px !important;
+  align-items: start !important;
+
+  width: 100% !important;
+  min-width: 0 !important;
   min-height: 0 !important;
-  border-right: none !important;
+  box-sizing: border-box !important;
+
+  margin: 0 !important;
+  padding: 10px 0 !important;
+
+  border: 0 !important;
+  border-bottom: 1px solid rgba(24, 24, 23, 0.17) !important;
+
+  text-align: left !important;
+  text-decoration: none !important;
 }
 
-.cv-page .cv-hero .cv-hero__scope .scope-item > span:first-child {
+/* Numero — prima colonna */
+body .cv-page .cv-hero .cv-hero__scope .scope-item > span:first-child {
+  display: block !important;
   grid-column: 1 !important;
   grid-row: 1 !important;
+
   margin: 0 !important;
+  padding: 0 !important;
+
+  color: #265649;
+  font-size: 13px !important;
   line-height: 1.3 !important;
+  font-weight: 500;
 }
 
-.cv-page .cv-hero .cv-hero__scope .scope-item > strong {
+/* Titolo — accanto al numero */
+body .cv-page .cv-hero .cv-hero__scope .scope-item > strong {
+  display: block !important;
   grid-column: 2 !important;
   grid-row: 1 !important;
+
   margin: 0 !important;
+  padding: 0 !important;
+
+  color: #265649;
+  font-size: 18px !important;
   line-height: 1.3 !important;
+  font-weight: 700 !important;
 }
 
-.cv-page .cv-hero .cv-hero__scope .scope-item > small {
+/* Descrizione — sotto il titolo */
+body .cv-page .cv-hero .cv-hero__scope .scope-item > small {
+  display: block !important;
   grid-column: 2 !important;
   grid-row: 2 !important;
+
   margin: 0 !important;
+  padding: 0 !important;
+
+  color: #5f5d58;
+  font-size: 14px !important;
   line-height: 1.4 !important;
+  font-weight: 400 !important;
+}
+
+/* ==========================================================
+   HOVER E ACCESSIBILITÀ
+   ========================================================== */
+
+body .cv-page .cv-hero .cv-hero__scope .scope-item {
+  transition: background-color 0.2s ease;
+}
+
+body .cv-page .cv-hero .cv-hero__scope .scope-item:hover {
+  padding-left: 0 !important;
+  background-color: rgba(38, 86, 73, 0.035);
+}
+
+body .cv-page .cv-hero .cv-hero__scope .scope-item:hover strong {
+  transform: none !important;
+}
+
+body .cv-page .cv-hero .cv-hero__scope .scope-item:focus-visible {
+  outline: 2px solid #C09A46;
+  outline-offset: 3px;
+}
+
+/* ==========================================================
+   TABLET E MOBILE
+   ========================================================== */
+
+@media (max-width: 900px) {
+
+  body .cv-page .cv-hero .cv-hero__grid {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) !important;
+    grid-template-areas:
+      "profile"
+      "sections" !important;
+    gap: 40px !important;
+    align-items: start !important;
+  }
+
+  body .cv-page .cv-hero .cv-hero__content {
+    grid-area: profile !important;
+    grid-column: 1 !important;
+    grid-row: auto !important;
+  }
+
+  body .cv-page .cv-hero .cv-hero__scope {
+    grid-area: sections !important;
+    grid-column: 1 !important;
+    grid-row: auto !important;
+  }
+
+  body .cv-page .cv-hero .cv-hero__scope .case-scope-grid {
+    grid-template-columns: minmax(0, 1fr) !important;
+  }
 }
 
 
