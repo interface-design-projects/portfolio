@@ -15656,3 +15656,43 @@ body .cv-page .cv-hero .cv-hero__scope .scope-item:hover {
     grid-row: auto !important;
   }
 }
+
+/* CV — NAVIGAZIONE VERTICALE A DESTRA */
+
+body .cv-page .cv-hero .cv-hero__scope .case-scope-grid {
+  display: grid !important;
+  grid-template-columns: minmax(0, 1fr) !important;
+  grid-template-rows: none !important;
+  gap: 0 !important;
+
+  width: 100% !important;
+  border-top: 1px solid rgba(24, 24, 23, 0.17) !important;
+  border-bottom: 0 !important;
+}
+
+body .cv-page .cv-hero .cv-hero__scope .scope-item,
+body .cv-page .cv-hero .cv-hero__scope .scope-item:nth-child(n) {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-start !important;
+
+  width: 100% !important;
+  min-height: 0 !important;
+  padding: 16px 0 !important;
+  gap: 6px !important;
+
+  border-right: 0 !important;
+  border-top: 0 !important;
+  border-bottom: 1px solid rgba(24, 24, 23, 0.17) !important;
+  text-align: left !important;
+}
+
+body .cv-page .cv-hero .cv-hero__scope .scope-item strong {
+  margin: 0 !important;
+  font-size: 18px !important;
+}
+
+body .cv-page .cv-hero .cv-hero__scope .scope-item small {
+  font-size: 14px !important;
+  line-height: 1.5 !important;
+}
